@@ -3,7 +3,6 @@ function filterEvenNumbers(numbers: number[]) {
   return numbers.filter(n => n % 2 === 0)
 }
 const EvenNum = filterEvenNumbers([1, 2, 3, 4, 5, 6])
-console.log(EvenNum)
 
 
 // problem 2 solve  
@@ -12,7 +11,7 @@ const reverseString = (str: string): string => {
   return str.split('').reverse().join('')
 }
 const reverse = reverseString("typescript")
-console.log(reverse)
+
 
 
 // problem 3 solve 
@@ -20,15 +19,14 @@ type StringOrNumber = string | number;
 
 const checkType = (StringOrNumber: StringOrNumber) => {
   if (typeof StringOrNumber === 'string') {
-    return "string"
+    return "String";
   }
   else if (typeof StringOrNumber === "number") {
-    return "number"
+    return "Number"
   }
 
 }
-const result = checkType(43)
-console.log(result)
+const result3 = checkType('43')
 
 // problem 4 solve 
 
@@ -42,7 +40,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key];
 }
 const result4 = getProperty(user, "name")
-console.log(result4);
+
 
 
 
@@ -66,7 +64,7 @@ const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
 }
 const result5=toggleReadStatus(myBook)
 
-console.log(result5)
+
 
 
 // problem 6 solve 
@@ -96,7 +94,7 @@ class Student extends Person {
 
 const student = new Student("Alice", 20, "A");
 
-console.log(student.getDetails());
+
 
 
 
@@ -118,6 +116,3 @@ function getIntersection(arr1: number[], arr2: number[]) {
   return result;
 }
 
-console.log(
-  getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
-);
