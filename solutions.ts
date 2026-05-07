@@ -67,3 +67,57 @@ const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
 const result5=toggleReadStatus(myBook)
 
 console.log(result5)
+
+
+// problem 6 solve 
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Student extends Person {
+  grade: string;
+
+  constructor(name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+  }
+}
+
+const student = new Student("Alice", 20, "A");
+
+console.log(student.getDetails());
+
+
+
+// problem 7 solve 
+
+
+function getIntersection(arr1: number[], arr2: number[]) {
+
+  let result: number[] = [];
+
+  for (let item of arr1) {
+
+    if (arr2.includes(item)) {
+      result.push(item);
+    }
+
+  }
+
+  return result;
+}
+
+console.log(
+  getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
+);
