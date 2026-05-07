@@ -2,8 +2,8 @@
 function filterEvenNumbers(numbers: number[]) {
   return numbers.filter(n => n % 2 === 0)
 }
-const result1 = filterEvenNumbers([1, 2, 3, 4, 5, 6])
-console.log(result1)
+const EvenNum = filterEvenNumbers([1, 2, 3, 4, 5, 6])
+console.log(EvenNum)
 
 
 // problem 2 solve  
@@ -11,8 +11,8 @@ console.log(result1)
 const reverseString = (str: string): string => {
   return str.split('').reverse().join('')
 }
-const result2 = reverseString("typescript")
-console.log(result2)
+const reverse = reverseString("typescript")
+console.log(reverse)
 
 
 // problem 3 solve 
@@ -31,13 +31,39 @@ const result = checkType(43)
 console.log(result)
 
 // problem 4 solve 
+
 const user = {
   id: 1,
   name: "John Doe",
   age: 21
 };
 
-function getProperty<T>(obj: T, key: keyof) {
-  return obj[key]
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key];
 }
-getProperty(user, "name");
+const result4 = getProperty(user, "name")
+console.log(result4);
+
+
+
+// problem 5 solve 
+
+
+interface Book {
+  title: string,
+  author: string,
+  publishedYear: number,
+
+}
+const myBook = {
+  title: "TypeScript Guide",
+  author: "Jane Doe",
+  publishedYear: 2024
+};
+
+const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
+ return {...book, isRead:true}
+}
+const result5=toggleReadStatus(myBook)
+
+console.log(result5)
